@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome {{ name }}!</title>
+</head>
+<body>
+    <h1>Welcome {{ name }}!</h1>
+    <p>Here is your list of tasks {{ title }}:</p>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
