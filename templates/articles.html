@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Articles{% endblock %}
+
+{% block content %}
+<button hx-get="/articles" hx-target="#articles" hx-trigger="click">Load Articles</button>
+<div id="articles">
+    {% for article in articles %}
+    <div class="article">
+        <h2><a href="{{ article.link }}">{{ article.title }}</a></h2>
+        <p>{{ article.description }}</p>
+        <small>By {{ article.author }} on {{ article.published }}</small>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

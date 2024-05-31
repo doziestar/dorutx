@@ -13,7 +13,7 @@ sea-orm = { version = "0.12", features = [ "sqlx-postgres", "runtime-tokio", "ma
 serde = "1.0.196"
 tracing-subscriber = { version = "0.3.18", features = ["json", "env-filter"] }
 tower = "0.4.13"
-tower-http = { version = "0.5.1", features = ["trace"] }
+tower-http = { version = "0.5.2", features = ["trace"] }
 log = "0.4.20"
 reqwest = "0.12.4"
 tracing = "0.1.40"

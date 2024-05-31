@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome {{ name }}!</title>
-</head>
-<body>
-    <h1>Welcome {{ name }}!</h1>
-    <p>Here is your list of tasks {{ title }}:</p>
-    <ul>
-        {% for task in tasks %}
-            <li>{{ task }}: {{ task.done }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<h2>Welcome to My Rust App</h2>
+<p>This is the main page. Use the navigation to browse through the site.</p>
+{% endblock %}

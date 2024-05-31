@@ -1,3 +1,4 @@
+use askama::Template;
 use reqwest::Client;
 use rss::{Channel};
 use serde::Serialize;
@@ -12,6 +13,12 @@ pub struct Article {
     pub published: String,
     pub author: String,
     pub categories: Vec<String>,
+}
+
+#[derive(Template)]
+#[template(path = "articles.html")]
+struct ArticlesTemplate {
+    articles: Vec<Article>,
 }
 
 /// Fetch articles from Medium's RSS feed.
