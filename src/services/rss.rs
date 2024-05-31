@@ -1,5 +1,5 @@
 use reqwest::Client;
-use rss::Channel;
+use rss::{Channel};
 use serde::Serialize;
 use axum::http::StatusCode;
 
@@ -8,6 +8,10 @@ pub struct Article {
     pub title: String,
     pub link: String,
     pub description: String,
+    pub content: String,
+    pub published: String,
+    pub author: String,
+    pub categories: Vec<String>,
 }
 
 /// Fetch articles from Medium's RSS feed.
@@ -43,6 +47,10 @@ pub async fn fetch_medium_articles() -> Result<Vec<Article>, (StatusCode, String
             title: item.title().unwrap_or("").to_string(),
             link: item.link().unwrap_or("").to_string(),
             description: item.description().unwrap_or("").to_string(),
+            content: item.content().unwrap_or("").to_string(),
+            published: item.pub_date().unwrap_or("").to_string(),
+            author: item.author().unwrap_or("").to_string(),
+            categories: item.categories().iter().map(|c| c.name().to_string()).collect(),
         })
         .collect();
 
