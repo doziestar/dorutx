@@ -1,4 +1,4 @@
-workspace = { members = ["ent"] }
+workspace = { members = [] }
 [package]
 name = "doziestar"
 version = "0.1.0"
@@ -11,3 +11,11 @@ hyper = {  version = "1.1.0", features = ["full"] }
 tokio = { version = "1.35.1", features = ["full"] }
 sea-orm = { version = "0.12", features = [ "sqlx-postgres", "runtime-tokio", "macros" ] }
 serde = "1.0.196"
+tracing-subscriber = { version = "0.3.18", features = ["json", "env-filter"] }
+tower = "0.4.13"
+tower-http = { version = "0.5.1", features = ["trace"] }
+log = "0.4.20"
+reqwest = "0.12.4"
+tracing = "0.1.40"
+rss = "2.0.8"
+serde_json = "1.0.111"
